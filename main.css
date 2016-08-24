@@ -1,0 +1,234 @@
+html, body {
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #222;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+    
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    cursor: default;
+}
+div {
+    background-color: rgba(255, 255, 255, 0);
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+button {
+    height: 52px;
+
+    font-family: '微软雅黑', sans-serif;
+    font-weight: lighter;
+    font-size: 25px;
+    border: 2px solid rgba(100, 100, 100, 0.5);
+    border-radius: 32px;
+    margin: 10px 10px 10px 10px;
+    padding: 8px;
+    outline: none;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 300ms;
+}
+button:hover {
+    background-color: rgba(220, 220, 220, 0.65);
+    transition: all 300ms;
+}
+button:active {
+    background-color: rgba(160, 160, 160, 0.8);
+    transition: all 300ms;
+}
+input[type=checkbox] {
+    vertical-align: middle;
+    zoom: 200%;
+}
+input[type=text],
+input[type=number] {
+    background-color: rgba(255, 255, 255, 0.6);
+    font-size: 32px;
+    border: 2px solid rgba(100, 100, 100, 0.33);
+    border-radius: 32px;
+    margin: 10px;
+    padding: 5px 10px 5px 10px;
+    width: calc(100% - 10px * 2);
+    box-sizing: border-box;
+
+    outline: none;
+
+    transition: all 500ms;
+}
+input[type=text]:hover,
+input[type=number]:hover {
+    border-color: rgba(63, 63, 255, 0.8);
+    transition: all 500ms;
+}
+input[type=range] {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+input[type=color] {
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+    padding: 0;
+    border: 2px solid rgba(100, 100, 100, 0.33);
+    /*border-radius: 32px;*/
+    outline: none;
+}
+select {
+    background-color: rgba(255, 255, 255, 0.6);
+    font-size: 27px;
+    border: 2px solid rgba(100, 100, 100, 0.33);
+    border-radius: 32px;
+    margin: 10px;
+    padding: 5px 10px 5px 10px;
+    width: calc(100% - 10px * 2);
+    box-sizing: border-box;
+    transition: all 500ms;
+    
+    outline: none;
+}
+
+.button-checked {
+    background-color: rgba(120, 120, 120, 0.83) !important;
+    border-color: rgba(255, 63, 63, 0.8);
+    color: white;
+    transition: all 300ms;
+}
+
+.color-warning {
+    color: #c00;
+}
+
+.hide-transition {
+    opacity: 0 !important;
+    transition: opacity 500ms;
+}
+.noblur-transition {
+    /* filter: blur(0) !important; */
+    -webkit-filter: blur(0) !important;
+    transition: -webkit-filter 500ms;
+}
+
+.italic {
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+}
+
+.font-icon {
+    font-family: "Segoe MDL2 Assets";
+    font-size: 32px;
+    vertical-align: text-top;
+}
+
+.select-font-family {
+    flex: 1 1 0;
+}
+
+.div-font-size {
+    flex: 0 0 114px;
+}
+.div-font-weight {
+    flex: 0 0 60px;
+}
+.range-font-weight {
+    height: calc(100% - 30px) !important;
+}
+.div-font-weight-value {
+    margin-top: 10px;
+    height: 20px;
+    text-align: center;
+}
+
+.checkbox-font {
+    font-size: 24px;
+}
+
+.listheader {
+    font-family: "等线", "微软雅黑 Light", "微软雅黑", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.listrow {
+    display: flex;
+}
+.listitem {
+    /*display: inline-block;*/
+}
+.listitem-text {
+    flex: 1 1 300px;
+}
+.listitem-pos {
+    width: 264px;
+    flex: 0 0 auto;
+    display: flex;
+}
+.listitem-font {
+    width: 560px;
+    flex: 0 1 auto;
+    display: flex;
+}
+.listitem-color {
+    width: 80px;
+    flex: 0 0 auto;
+}
+.listitem-op {
+    width: 160px;
+    flex: 0 0 auto;
+}
+
+.div-pos-number {
+    width: 50%;
+}
+
+#divCanvasPreview {
+    background-color: #fff;
+    background-image: url("http://naire.info/comnet/winestory/image2/700x428.jpg");
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    z-index: -1;
+
+    /* filter: blur(4px); */
+    -webkit-filter: blur(4px);
+    transition: -webkit-filter 500ms;
+}
+#divMainContainer {
+    opacity: 1;
+    transition: opacity 500ms;
+}
+#divLeftSide {
+    width: calc(100% - 300px);
+    float: left;
+}
+#divRightSide {
+    width: 300px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    overflow: auto;
+    float: right;
+}
+#divPeek {
+    position: fixed;
+    left: 30px;
+    bottom: 20px;
+    background: rgba(0, 0, 0, 0.01);
+    font-size: 64px;
+}
+#divFontSelector {
+    
+}
+#divHeader {
+    display: flex;
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <datalist id="datalistFontWeights">
+        <option value="400" label="常规">
+    </datalist>
+
+    <div id="divCanvasPreview">
+        <canvas id="canvasPreview">Canvas isn't supported on this browser.</canvas>
+    </div>
+    <div id="divPeek" class="font-icon" title="预览">&#xE052;</div>
+    <div id="divMainContainer">
+        <div id="divLeftSide">
+            <div id="divToolbar">
+                <button id="buttonAdd" type="button" title="添加"><span class="font-icon">&#xE109;</span></button>
+                <!--<button id="buttonAddRandom" type="button" title="添加并随机"><span class="font-icon">&#xE109;</span> 添加并随机</button>-->
+            </div>
+            <div id="divHeader">
+                <div id="divHeaderText" class="listheader listitem listitem-text">文本</div>
+                <div id="divHeaderPos" class="listheader listitem listitem-pos">位置</div>
+                <div id="divHeaderFont" class="listheader listitem listitem-font">字体</div>
+                <div id="divHeaderColor" class="listheader listitem listitem-color">颜色</div>
+                <div id="divHeaderOp" class="listheader listitem listitem-op">&nbsp;</div>
+            </div>
+            <div id="divList">
+                <div id="item01" class="listrow">
+                    <div id="" class="listitem listitem-text">
+                        <input type="text" name="text1" value="">
+                    </div>
+                    <div id="" class="listitem listitem-pos">
+                        <div class="listitem div-pos-number">
+                            <input type="number" name="posx1" step="1" value="0">
+                        </div>
+                        <div class="listitem div-pos-number">
+                            <input type="number" name="posy1" step="1" value="0">
+                        </div>
+                    </div>
+                    <div id="" class="listitem listitem-font">
+                        <select id="selectFontFamily1" class="select-font-family" title="字体家族">
+                            <optgroup label="Windows 中文字体">
+                                <option>等线</option>
+                                <option>微软雅黑</option>
+                                <option>隶书</option>
+                                <option>幼圆</option>
+                                <option>仿宋</option>
+                                <option>楷体</option>
+                                <option>黑体</option>
+                                <option>宋体</option>
+                            </optgroup>
+                            <optgroup label="Office 2007 中文字体">
+                                <option>方正舒体</option>
+                                <option>方正姚体</option>
+                                <option>华文彩云</option>
+                                <option>华文仿宋</option>
+                                <option>华文行楷</option>
+                                <option>华文琥珀</option>
+                                <option>华文楷体</option>
+                                <option>华文隶书</option>
+                                <option>华文宋体</option>
+                                <option>华文细黑</option>
+                                <option>华文新魏</option>
+                                <option>华文中宋</option>
+                            </optgroup>
+                            <optgroup label="Windows 拉丁文无衬线字体">
+                                <option>Arial</option>
+                                <option>Calibri</option>
+                                <option>Segoe UI</option>
+                                <option>Tahoma</option>
+                                <option>Verdana</option>
+                            </optgroup>
+                            <optgroup label="Windows 拉丁文衬线字体">
+                                <option>Times New Roman</option>
+                            </optgroup>
+                            <optgroup label="Windows 拉丁文手写字体">
+                                <option>Brush Script MT</option>
+                                <option>Comic Sans MS</option>
+                                <option>Freestyle Script</option>
+                                <option>Old English Text MT</option>
+                                <option>Segoe Print</option>
+                                <option>Segoe Script</option>
+                            </optgroup>
+                            <optgroup label="Windows 拉丁文等宽字体">
+                                <option>Consolas</option>
+                                <option>Courier New</option>
+                                <option>Lucida Console</option>
+                            </optgroup>
+                            <optgroup label="Windows 拉丁文 ITC 系列字体">
+                                <option>Blackadder ITC</option>
+                                <option>Bradley Hand ITC</option>
+                                <option>Edwardian Script ITC</option>
+                                <option>Eras ITC</option>
+                                <option>Juice ITC</option>
+                                <option>Kristen ITC</option>
+                                <option>Snap ITC</option>
+                                <option>Tempus Sans ITC</option>
+                                <option>Viner Hand ITC</option>
+                            </optgroup>
+                        </select>
+                        <div class="listitem div-font-size">
+                            <input type="number" name="size1" min="0" value="16" title="字体大小 (px)">
+                        </div>
+                        <div class="div-font-weight">
+                            <div id="divFontWeightValue1" class="div-font-weight-value">400</div>
+                            <input id="rangeFontWeight1" class="range-font-weight" type="range" min="100" max="900" step="100" value="400" list="datalistFontWeights"
+                                oninput="onRangeFontWeightChange(1);" title="字体粗细">
+                        </div>
+                        <button id="buttonItalic1" type="button" title="斜体" style="width: 52px"
+                            onclick="onButtonItalicClick(1);">
+                            <span class="italic" style="font-size: 30px">i</span>
+                        </button>
+                    </div>
+                    <div id="" class="listitem listitem-color">
+                        <input id="color1" type="color" name="" value="#000000" title="#000000" onchange="onColorChange(1);">
+                    </div>
+                    <div id="" class="listitem listitem-op">
+                        <button id="buttonRemove1" class="font-icon color-warning" title="移除">&#xE107;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divRightSide">
+            <div id="divFontSelector">
+                <div style="font-size: 48px">
+                    字体
+                    <div style="font-size: 16px">选择在随机决策中可以使用的字体</div>
+                </div>
+                <br />
+                <div id="divFontChineseWindows">
+                    <p><b>Windows 中文字体</b></p>
+                    <div id="divFont等线" class="checkbox-font" style="font-family: '等线'">
+                        <input type="checkbox" data-font-family="等线" />等线
+                    </div>
+                    <div id="divFont微软雅黑" class="checkbox-font" style="font-family: '微软雅黑'">
+                        <input type="checkbox" data-font-family="微软雅黑" />微软雅黑
+                    </div>
+                    <div id="divFont隶书" class="checkbox-font" style="font-family: '隶书'">
+                        <input type="checkbox" data-font-family="隶书" />隶书
+                    </div>
+                    <div id="divFont幼圆" class="checkbox-font" style="font-family: '幼圆'">
+                        <input type="checkbox" data-font-family="幼圆" />幼圆
+                    </div>
+                    <div id="divFont仿宋" class="checkbox-font" style="font-family: '仿宋'">
+                        <input type="checkbox" data-font-family="仿宋" />仿宋
+                    </div>
+                    <div id="divFont楷体" class="checkbox-font" style="font-family: '楷体'">
+                        <input type="checkbox" data-font-family="楷体" />楷体
+                    </div>
+                    <div id="divFont黑体" class="checkbox-font" style="font-family: '黑体'">
+                        <input type="checkbox" data-font-family="黑体" />黑体
+                    </div>
+                    <div id="divFont宋体" class="checkbox-font" style="font-family: '宋体'">
+                        <input type="checkbox" data-font-family="宋体" />宋体
+                    </div>
+                </div>
+                <br />
+                <div id="divFontChineseOffice07">
+                    <p><b>Office 2007 中文字体</b></p>
+                    <div id="divFont方正舒体" class="checkbox-font" style="font-family: '方正舒体'">
+                        <input type="checkbox" data-font-family="方正舒体" />方正舒体
+                    </div>
+                    <div id="divFont方正姚体" class="checkbox-font" style="font-family: '方正姚体'">
+                        <input type="checkbox" data-font-family="方正姚体" />方正姚体
+                    </div>
+                    <div id="divFont华文彩云" class="checkbox-font" style="font-family: '华文彩云'">
+                        <input type="checkbox" data-font-family="华文彩云" />华文彩云
+                    </div>
+                    <div id="divFont华文仿宋" class="checkbox-font" style="font-family: '华文仿宋'">
+                        <input type="checkbox" data-font-family="华文仿宋" />华文仿宋
+                    </div>
+                    <div id="divFont华文行楷" class="checkbox-font" style="font-family: '华文行楷'">
+                        <input type="checkbox" data-font-family="华文行楷" />华文行楷
+                    </div>
+                    <div id="divFont华文琥珀" class="checkbox-font" style="font-family: '华文琥珀'">
+                        <input type="checkbox" data-font-family="华文琥珀" />华文琥珀
+                    </div>
+                    <div id="divFont华文楷体" class="checkbox-font" style="font-family: '华文楷体'">
+                        <input type="checkbox" data-font-family="华文楷体" />华文楷体
+                    </div>
+                    <div id="divFont华文隶书" class="checkbox-font" style="font-family: '华文隶书'">
+                        <input type="checkbox" data-font-family="华文隶书" />华文隶书
+                    </div>
+                    <div id="divFont华文宋体" class="checkbox-font" style="font-family: '华文宋体'">
+                        <input type="checkbox" data-font-family="华文宋体" />华文宋体
+                    </div>
+                    <div id="divFont华文细黑" class="checkbox-font" style="font-family: '华文细黑'">
+                        <input type="checkbox" data-font-family="华文细黑" />华文细黑
+                    </div>
+                    <div id="divFont华文新魏" class="checkbox-font" style="font-family: '华文新魏'">
+                        <input type="checkbox" data-font-family="华文新魏" />华文新魏
+                    </div>
+                    <div id="divFont华文中宋" class="checkbox-font" style="font-family: '华文中宋'">
+                        <input type="checkbox" data-font-family="华文中宋" />华文中宋
+                    </div>
+                </div>
+                <br />
+                <div id="divFontSansSerif">
+                    <p><b>Windows 拉丁文无衬线字体</b></p>
+                    <div id="divFontArial" class="checkbox-font" style="font-family: 'Arial', sans-serif">
+                        <input type="checkbox" data-font-family="Arial" />Arial
+                    </div>
+                    <div id="divFontCalibri" class="checkbox-font" style="font-family: 'Calibri', sans-serif">
+                        <input type="checkbox" data-font-family="Calibri" />Calibri
+                    </div>
+                    <div id="divFontSegoeUI" class="checkbox-font" style="font-family: 'Segoe UI', sans-serif">
+                        <input type="checkbox" data-font-family="Segoe UI" />Segoe UI
+                    </div>
+                    <div id="divFontTahoma" class="checkbox-font" style="font-family: 'Tahoma', sans-serif">
+                        <input type="checkbox" data-font-family="Tahoma" />Tahoma
+                    </div>
+                    <div id="divFontVerdana" class="checkbox-font" style="font-family: 'Verdana', sans-serif">
+                        <input type="checkbox" data-font-family="Verdana" />Verdana
+                    </div>
+                </div>
+                <br />
+                <div id="divFontSerif">
+                    <p><b>Windows 拉丁文衬线字体</b></p>
+                    <div id="divFontTimesNewRoman" class="checkbox-font" style="font-family: 'Times New Roman', serif">
+                        <input type="checkbox" data-font-family="Times New Roman" />Times New Roman
+                    </div>
+                </div>
+                <br />
+                <div id="divFontScript">
+                    <p><b>Windows 拉丁文手写字体</b></p>
+                    <div id="divFontBrushScriptMT" class="checkbox-font" style="font-family: 'Brush Script MT'">
+                        <input type="checkbox" data-font-family="Brush Script MT" />Brush Script MT
+                    </div>
+                    <div id="divFontComicSansMS" class="checkbox-font" style="font-family: 'Comic Sans MS'">
+                        <input type="checkbox" data-font-family="Comic Sans MS" />Comic Sans MS
+                    </div>
+                    <div id="divFontFreestyleScript" class="checkbox-font" style="font-family: 'Freestyle Script'">
+                        <input type="checkbox" data-font-family="Freestyle Script" />Freestyle Script
+                    </div>
+                    <div id="divFontOldEnglishTextMT" class="checkbox-font" style="font-family: 'Old English Text MT'">
+                        <input type="checkbox" data-font-family="Old English Text MT" />Old English Text MT
+                    </div>
+                    <div id="divFontSegoePrint" class="checkbox-font" style="font-family: 'Segoe Print'">
+                        <input type="checkbox" data-font-family="Segoe Print" />Segoe Print
+                    </div>
+                    <div id="divFontSegoeScript" class="checkbox-font" style="font-family: 'Segoe Script'">
+                        <input type="checkbox" data-font-family="Segoe Script" />Segoe Script
+                    </div>
+                </div>
+                <br />
+                <div id="divFontMonospaced">
+                    <p><b>Windows 拉丁文等宽字体</b></p>
+                    <div id="divFontConsolas" class="checkbox-font" style="font-family: 'Consolas', monospaced">
+                        <input type="checkbox" data-font-family="Consolas" />Consolas
+                    </div>
+                    <div id="divFontCourierNew" class="checkbox-font" style="font-family: 'Courier New', monospaced">
+                        <input type="checkbox" data-font-family="Courier New" />Courier New
+                    </div>
+                    <div id="divFontLucidaConsole" class="checkbox-font" style="font-family: 'Lucida Console', monospaced">
+                        <input type="checkbox" data-font-family="Lucida Console" />Lucida Console
+                    </div>
+                </div>
+                <br />
+                <div id="divFontItcSeries">
+                    <p><b>Windows 拉丁文 ITC 系列字体</b></p>
+                    <div id="divFontBlackadderITC" class="checkbox-font" style="font-family: 'Blackadder ITC'">
+                        <input type="checkbox" data-font-family="Blackadder ITC" />Blackadder ITC
+                    </div>
+                    <div id="divFontBradleyHandITC" class="checkbox-font" style="font-family: 'Bradley Hand ITC'">
+                        <input type="checkbox" data-font-family="Bradley Hand ITC" />Bradley Hand ITC
+                    </div>
+                    <div id="divFontEdwardianScriptITC" class="checkbox-font" style="font-family: 'Edwardian Script ITC'">
+                        <input type="checkbox" data-font-family="Edwardian Script ITC" />Edwardian Script ITC
+                    </div>
+                    <div id="divFontErasITC" class="checkbox-font" style="font-family: 'Eras ITC'">
+                        <input type="checkbox" data-font-family="Eras ITC" />Eras ITC
+                    </div>
+                    <div id="divFontJuiceITC" class="checkbox-font" style="font-family: 'Juice ITC'">
+                        <input type="checkbox" data-font-family="Juice ITC" />Juice ITC
+                    </div>
+                    <div id="divFontKristenITC" class="checkbox-font" style="font-family: 'Kristen ITC'">
+                        <input type="checkbox" data-font-family="Kristen ITC" />Kristen ITC
+                    </div>
+                    <div id="divFontSnapITC" class="checkbox-font" style="font-family: 'Snap ITC'">
+                        <input type="checkbox" data-font-family="Snap ITC" />Snap ITC
+                    </div>
+                    <div id="divFontTempusSansITC" class="checkbox-font" style="font-family: 'Tempus Sans ITC'">
+                        <input type="checkbox" data-font-family="Tempus Sans ITC" />Tempus Sans ITC
+                    </div>
+                    <div id="divFontVinerHandITC" class="checkbox-font" style="font-family: 'Viner Hand ITC'">
+                        <input type="checkbox" data-font-family="Viner Hand ITC" />Viner Hand ITC
+                    </div>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>

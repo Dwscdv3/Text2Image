@@ -55,7 +55,8 @@ divPeek.onmouseover = startPeek;
 divPeek.onmouseout = stopPeek;
 
 var listItemCount = 0;
-buttonAdd.onclick = function () {
+buttonAdd.onclick = addListItem;
+function addListItem() {
     divList.appendChild(generateListItem(++listItemCount));
 };
 
@@ -85,3 +86,5 @@ function onColorChange(index) {
     var color = document.getElementById("color" + index);
     color.title = color.value;
 }
+
+addListItem();

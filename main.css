@@ -216,15 +216,19 @@ select {
     transition: all 500ms;
 }
 #divMainContainer {
+    height: 100%;
     opacity: 1;
     transition: opacity 500ms;
 }
 #divLeftSide {
     width: calc(100% - 300px);
+    height: 100%;
     float: left;
+    overflow: auto;
 }
 #divRightSide {
     width: 300px;
+    height: 100%;
     padding-left: 10px;
     box-sizing: border-box;
     overflow: auto;

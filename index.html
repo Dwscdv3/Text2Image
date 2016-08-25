@@ -16,7 +16,7 @@
     <div id="divCanvasPreview">
         <canvas id="canvasPreview">Canvas isn't supported on this browser.</canvas>
     </div>
-    <div id="divPeek" class="font-icon" title="预览">&#xE052;</div>
+    <div id="divPeek" class="font-icon" title="预览&#xA;点击以禁用">&#xE052;</div>
     <div id="divMainContainer">
         <div id="divLeftSide">
             <div id="divToolbar">
@@ -31,20 +31,20 @@
                 <div id="divHeaderOp" class="listheader listitem listitem-op">&nbsp;</div>
             </div>
             <div id="divList">
-                <div id="item01" class="listrow">
+                <!--<div id="divListItem*" class="listrow">
                     <div id="" class="listitem listitem-text">
-                        <input type="text" name="text1" value="">
+                        <input type="text" name="text*" value="">
                     </div>
                     <div id="" class="listitem listitem-pos">
                         <div class="listitem div-pos-number">
-                            <input type="number" name="posx1" step="1" value="0">
+                            <input id="numberPosX*" type="number" name="posx*" step="1" value="0">
                         </div>
                         <div class="listitem div-pos-number">
-                            <input type="number" name="posy1" step="1" value="0">
+                            <input id="numberPosY*" type="number" name="posy*" step="1" value="0">
                         </div>
                     </div>
                     <div id="" class="listitem listitem-font">
-                        <select id="selectFontFamily1" class="select-font-family" title="字体家族">
+                        <select id="selectFontFamily*" class="select-font-family" title="字体家族">
                             <optgroup label="Windows 中文字体">
                                 <option>等线</option>
                                 <option>微软雅黑</option>
@@ -105,25 +105,25 @@
                             </optgroup>
                         </select>
                         <div class="listitem div-font-size">
-                            <input type="number" name="size1" min="0" value="16" title="字体大小 (px)">
+                            <input id="numberFontSize*" type="number" name="size*" min="0" value="16" title="字体大小 (px)">
                         </div>
                         <div class="div-font-weight">
-                            <div id="divFontWeightValue1" class="div-font-weight-value">400</div>
-                            <input id="rangeFontWeight1" class="range-font-weight" type="range" min="100" max="900" step="100" value="400" list="datalistFontWeights"
-                                oninput="onRangeFontWeightChange(1);" title="字体粗细">
+                            <div id="divFontWeightValue*" class="div-font-weight-value">400</div>
+                            <input id="rangeFontWeight*" class="range-font-weight" type="range" min="100" max="900" step="100" value="400" list="datalistFontWeights"
+                                oninput="onRangeFontWeightChange(*);" title="字体粗细">
                         </div>
-                        <button id="buttonItalic1" type="button" title="斜体" style="width: 52px"
-                            onclick="onButtonItalicClick(1);">
+                        <button id="buttonItalic*" type="button" title="斜体" style="width: 52px"
+                            onclick="onButtonItalicClick(*);">
                             <span class="italic" style="font-size: 30px">i</span>
                         </button>
                     </div>
                     <div id="" class="listitem listitem-color">
-                        <input id="color1" type="color" name="" value="#000000" title="#000000" onchange="onColorChange(1);">
+                        <input id="color*" type="color" name="" value="#000000" title="#000000" onchange="onColorChange(*);">
                     </div>
                     <div id="" class="listitem listitem-op">
-                        <button id="buttonRemove1" class="font-icon color-warning" title="移除">&#xE107;</button>
+                        <button id="buttonRemove*" class="font-icon color-warning" title="移除" onclick="onButtonRemoveClick(*);">&#xE107;</button>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
         <div id="divRightSide">

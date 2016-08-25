@@ -105,6 +105,10 @@ select {
 .color-warning {
     color: #c00;
 }
+.color-disabled {
+    color: rgba(127, 127, 127, 0.5);
+    transition: all 300ms;
+}
 
 .hide-transition {
     opacity: 0 !important;
@@ -132,7 +136,7 @@ select {
 }
 
 .div-font-size {
-    flex: 0 0 114px;
+    flex: 0 0.33 114px;
 }
 .div-font-weight {
     flex: 0 0 60px;
@@ -168,7 +172,7 @@ select {
 }
 .listitem-pos {
     width: 264px;
-    flex: 0 0 auto;
+    flex: 0 0.5 auto;
     display: flex;
 }
 .listitem-font {
@@ -192,17 +196,24 @@ select {
 #divCanvasPreview {
     background-color: #fff;
     background-image: url("http://naire.info/comnet/winestory/image2/700x428.jpg");
+
     position: fixed;
+
     width: 100%;
     height: 100%;
+
     margin: 0;
     padding: 0;
     border: 0;
+
     z-index: -1;
+
+    opacity: 1;
 
     /* filter: blur(4px); */
     -webkit-filter: blur(4px);
-    transition: -webkit-filter 500ms;
+
+    transition: all 500ms;
 }
 #divMainContainer {
     opacity: 1;
@@ -225,6 +236,10 @@ select {
     bottom: 20px;
     background: rgba(0, 0, 0, 0.01);
     font-size: 64px;
+
+    z-index: 10;
+
+    transition: all 300ms;
 }
 #divFontSelector {
     

@@ -129,11 +129,11 @@ select {
     -webkit-filter: blur(5px);
     transition: -webkit-filter 500ms;
 }
-.backdrop-blur-layer {
+/*.backdrop-blur-layer {
     position: fixed;
 
     width: calc(100% - 300px);
-    height: 127px;
+    height: 130px;
 
     background-color: rgba(255, 255, 255, 0.8);
 
@@ -146,7 +146,7 @@ select {
         -webkit-backdrop-filter: blur(5px);
         backdrop-filter: blur(5px);
     }
-}
+}*/
 
 .italic {
     font-style: italic;
@@ -223,9 +223,14 @@ select {
     width: 50%;
 }
 
+.fixed-header {
+    position: fixed;
+    height: 130px;
+}
+
 #divCanvasPreview {
     background-color: #fff;
-    background-image: url("http://naire.info/comnet/winestory/image2/700x428.jpg");
+    /*background-image: url("http://naire.info/comnet/winestory/image2/700x428.jpg");*/
 
     position: fixed;
 
@@ -245,6 +250,9 @@ select {
 
     transition: all 500ms;
 }
+#canvasPreview {
+    
+}
 #divMainContainer {
     height: 100%;
     opacity: 1;
@@ -255,6 +263,10 @@ select {
     height: 100%;
     float: left;
     overflow: auto;
+}
+#divList {
+    overflow-y: auto;
+    height: calc(100% - 130px);
 }
 #divRightSide {
     width: 300px;
@@ -276,12 +288,19 @@ select {
     transition: all 300ms;
 }
 #divFontSelector {
-    
+    overflow-y: auto;
+    height: calc(100% - 130px);
 }
 #divListHeader {
     display: flex;
 }
 #divLeftSideHeader {
-    position: fixed;
     width: calc(100% - 300px);
+    top: 0;
+    left: 0;
+}
+#divRightSideHeader {
+    width: 300px;
+    top: 0;
+    right: 0;
 }
